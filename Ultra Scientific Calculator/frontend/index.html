@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ultra Calculator V3</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>Ultra Calc</h2>
+
+        <button onclick="showTab('calc')">Calculator</button>
+        <button onclick="showTab('history')">History</button>
+        <button onclick="showTab('graph')">Graph</button>
+
+        <button onclick="toggleDeg()">DEG/RAD</button>
+
+        <div id="clock"></div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- CALCULATOR -->
+        <div class="tab active" id="calc">
+
+            <input id="display" readonly>
+
+            <div class="buttons">
+
+                <button onclick="append('sin(')">sin</button>
+                <button onclick="append('cos(')">cos</button>
+                <button onclick="append('tan(')">tan</button>
+                <button onclick="append('Math.sqrt(')">√</button>
+
+                <button onclick="append('Math.log10(')">log</button>
+                <button onclick="append('Math.PI')">π</button>
+                <button onclick="clearAll()">C</button>
+                <button onclick="backspace()">⌫</button>
+
+                <button onclick="append('7')">7</button>
+                <button onclick="append('8')">8</button>
+                <button onclick="append('9')">9</button>
+                <button onclick="append('/')">÷</button>
+
+                <button onclick="append('4')">4</button>
+                <button onclick="append('5')">5</button>
+                <button onclick="append('6')">6</button>
+                <button onclick="append('*')">×</button>
+
+                <button onclick="append('1')">1</button>
+                <button onclick="append('2')">2</button>
+                <button onclick="append('3')">3</button>
+                <button onclick="append('-')">−</button>
+
+                <button onclick="append('0')">0</button>
+                <button onclick="append('.')">.</button>
+                <button onclick="append('**2')">x²</button>
+                <button onclick="append('+')">+</button>
+
+                <button class="equal" onclick="calculate()">=</button>
+
+            </div>
+        </div>
+
+        <!-- HISTORY -->
+        <div class="tab" id="history">
+            <h2>History</h2>
+            <div id="historyList"></div>
+        </div>
+
+        <!-- GRAPH -->
+        <div class="tab" id="graph">
+            <h2>Graph</h2>
+            <canvas id="canvas"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="js/history.js"></script>
+<script src="js/graph.js"></script>
+<button onclick="showExplain()">Explain</button>
+<div id="aiBox"></div>
+</body>
+</html>
